@@ -1,6 +1,6 @@
 import React from 'react';
 
-const header: React.FC = () => {
+const Header: React.FC = () => {
   return (
     <header className='bg-black p-2 flex items-center justify-center text-white font-bold text-4xl'>
       MOVIE SEARCH DEMO
@@ -8,4 +8,4 @@ const header: React.FC = () => {
   );
 };
 
-export default header;
+export default Header;

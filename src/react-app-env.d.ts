@@ -1,6 +1,6 @@
 /// <reference types="react-scripts" />
 
-interface Unsplash {
+export interface AxiosUnsplashResponse {
   urls: {
     raw: URL;
     full: URL;
@@ -8,13 +8,4 @@ interface Unsplash {
     small: URL;
     thumb: URL;
   };
-}
-
-export interface AxiosUnsplashResponse {
-  data: Unsplash;
-  status: number;
-  statusText: string;
-  headers: any;
-  config: AxiosRequestConfig;
-  request?: any;
 }

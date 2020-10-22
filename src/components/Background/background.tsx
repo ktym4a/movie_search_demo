@@ -1,18 +1,30 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 
-import {getRandomImage} from 'apis/unsplash';
+import Unsplash from 'apis/unsplash';
 
-const background: React.FC = ({ children }) => {
-  const [background, setBackground] = useState("")
+import { AxiosUnsplashResponse } from 'react-app-env';
 
-  useEffect(async () => {
-    const response = await getRandomImage();
-    const backgroundImage = response.data.data.urls.full
-    setBackground()
-  }, [])
+const Background: React.FC = ({ children }) => {
+  const [background, setBackground] = useState<URL>();
+
+  const getRandomImage = async () => {
+    await Unsplash.get<AxiosUnsplashResponse>('/photos/random').then(
+      (response) => {
+        setBackground(response.data.urls.full);
+      }
+    );
+  };
+
+  useEffect(() => {
+    getRandomImage();
+  }, []);
 
   return (
+    <Fragment>
+      {children}
+      {background}
+    </Fragment>
   );
 };
 
-export default background;
+export default Background;

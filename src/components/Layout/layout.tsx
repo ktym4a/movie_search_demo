@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
 import Header from 'components/Header';
+import Background from 'components/Background';
 
-const layout: React.FC = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <Fragment>
       <Header />
+      <Background />
       {children}
     </Fragment>
   );
 };
 
-export default layout;
+export default Layout;
