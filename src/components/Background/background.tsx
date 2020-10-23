@@ -4,13 +4,15 @@ import Unsplash from 'apis/unsplash';
 
 import { AxiosUnsplashResponse } from 'react-app-env';
 
+import './css/background.css';
+
 const Background: React.FC = ({ children }) => {
-  const [background, setBackground] = useState<URL>();
+  const [background, setBackground] = useState<string>('');
 
   const getRandomImage = async () => {
     await Unsplash.get<AxiosUnsplashResponse>('/photos/random').then(
       (response) => {
-        setBackground(response.data.urls.full);
+        setBackground(response.data.urls.regular);
       }
     );
   };
@@ -21,9 +23,12 @@ const Background: React.FC = ({ children }) => {
 
   return (
     <Fragment>
-      {children}
-      test
-      {background}
+      <div
+        className='bg-cover bg-center blurBg overflow-hidden z-0 relative'
+        style={{ backgroundImage: `url(${background})` }}
+      >
+        {children}
+      </div>
     </Fragment>
   );
 };

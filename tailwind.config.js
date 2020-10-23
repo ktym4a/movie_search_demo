@@ -5,7 +5,14 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        layout: 'auto 1fr',
+      },
+      backgroundImage: {
+        variants: ['before'],
+      },
+    },
   },
   variants: {},
   plugins: [],

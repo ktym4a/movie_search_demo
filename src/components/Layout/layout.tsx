@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Header from 'components/Header';
 import Background from 'components/Background';
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <Fragment>
+    <div className='grid grid-rows-layout min-h-screen'>
       <Header />
-      <Background />
-      {children}
-    </Fragment>
+      <Background>{children}</Background>
+    </div>
   );
 };
 

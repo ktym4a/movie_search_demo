@@ -2,10 +2,10 @@
 
 export interface AxiosUnsplashResponse {
   urls: {
-    raw: URL;
-    full: URL;
-    regular: URL;
-    small: URL;
-    thumb: URL;
+    raw: string;
+    full: string;
+    regular: string;
+    small: string;
+    thumb: string;
   };
 }
