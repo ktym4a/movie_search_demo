@@ -22,6 +22,7 @@ const Background: React.FC = ({ children }) => {
   return (
     <Fragment>
       {children}
+      test
       {background}
     </Fragment>
   );
