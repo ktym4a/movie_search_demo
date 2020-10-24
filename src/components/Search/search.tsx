@@ -19,7 +19,7 @@ const Search: React.FC = () => {
         placeholder='検索'
         onChange={(e) => setTerm(e.target.value)}
         value={term}
-        className='text-gray-600 py-2 block w-full appearance-none border border-transparent rounded-lg focus:outline-none text-left h-10 text-base leading-5 mr-4
+        className='text-gray-600 py-2 block w-full appearance-none border rounded-lg focus:outline-none text-left h-10 text-base leading-5 mr-4
         '
       />
       <button type='submit'>
