@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Layout from 'components/Layout';
-import Search from 'components/Search';
+import SearchForm from 'components/SearchForm';
 
 const Top: React.FC = () => {
   return (
     <Layout top={true}>
       <div className='items-top justify-center w-full px-4 flex pt-64'>
-        <Search />
+        <SearchForm />
       </div>
     </Layout>
   );

@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const Search: React.FC = () => {
+import { useHistory } from 'react-router-dom';
+
+const SearchForm: React.FC = () => {
   const [term, setTerm] = useState('');
+  const history = useHistory();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    history.push(`/search?query=${term}`);
   };
 
   return (
@@ -26,4 +31,4 @@ const Search: React.FC = () => {
   );
 };
 
-export default Search;
+export default SearchForm;
