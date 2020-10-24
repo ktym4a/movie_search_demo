@@ -9,3 +9,7 @@ export interface AxiosUnsplashResponse {
     thumb: string;
   };
 }
+
+export interface LayoutProps {
+  top: boolean;
+}
