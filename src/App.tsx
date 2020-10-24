@@ -1,14 +1,17 @@
 import React from 'react';
-
-import Layout from 'components/Layout';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import 'styles/tailwind.output.css';
 
+import Top from 'pages/Top';
+
 function App() {
   return (
-    <Layout>
-      <div className='App'>TOP</div>
-    </Layout>
+    <Router>
+      <Switch>
+        <Route exact path='/' component={Top}></Route>
+      </Switch>
+    </Router>
   );
 }
 
