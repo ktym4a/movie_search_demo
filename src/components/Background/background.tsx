@@ -9,7 +9,7 @@ import './css/background.css';
 
 const Background: React.FC = ({ children }) => {
   const [background, setBackground] = useState<string>(backgroound);
-  const [loadedBG, setloadedBG] = useState<boolean>(true);
+  const [loadedBG, setLoadedBG] = useState<boolean>(true);
 
   const getRandomImage = async () => {
     await Unsplash.get<AxiosUnsplashResponse>('/photos/random')
@@ -20,7 +20,7 @@ const Background: React.FC = ({ children }) => {
         console.log(error);
       })
       .then(function () {
-        setloadedBG(false);
+        setLoadedBG(false);
       });
   };
 

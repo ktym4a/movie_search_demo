@@ -10,6 +10,25 @@ export interface AxiosUnsplashResponse {
   };
 }
 
+export interface AxiosMoviesSearchResponse {
+  Search: [MoviesSearchProps];
+  Response: boolean;
+  Error?: string;
+  totalResults?: number;
+}
+
+export interface MovieUnitProps {
+  movie: MoviesSearchProps;
+}
+
+export interface MoviesSearchProps {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
+
 export interface LayoutProps {
   top: boolean;
 }
