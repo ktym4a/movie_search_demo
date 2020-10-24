@@ -7,10 +7,13 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        layout: 'auto 1fr',
+        layout: '1fr',
       },
-      backgroundImage: {
-        variants: ['before'],
+      backgroundColor: {
+        header: 'rgba(0,0,0,0.5)',
+      },
+      width: {
+        form: '40vw',
       },
     },
   },

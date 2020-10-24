@@ -15,10 +15,12 @@ const Background: React.FC = ({ children }) => {
     await Unsplash.get<AxiosUnsplashResponse>('/photos/random')
       .then((response) => {
         response.status === 200 && setBackground(response.data.urls.regular);
-        setloadedBG(false);
       })
       .catch((error) => {
         console.log(error);
+      })
+      .then(function () {
+        setloadedBG(false);
       });
   };
 

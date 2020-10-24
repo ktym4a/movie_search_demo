@@ -6,8 +6,8 @@ import { LayoutProps } from 'react-app-env';
 
 const Header: React.FC<LayoutProps> = ({ top }) => {
   return (
-    <header className='bg-black flex items-center justify-center text-white font-bold text-4xl h-16'>
-      {top ? 'Search Moives' : <Search />}
+    <header className='bg-header flex items-center justify-center text-white font-bold h-16 fixed w-full z-10'>
+      {top ? <span className='text-4xl'>Search Moives</span> : <Search />}
     </header>
   );
 };
