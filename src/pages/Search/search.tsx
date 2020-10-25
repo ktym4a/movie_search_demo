@@ -36,14 +36,16 @@ const Search: React.FC = () => {
 
   return (
     <Layout top={false}>
-      <div className='items-top justify-center w-full px-4 flex pt-64'>
-        {movieData?.Error ? (
-          <span>{movieData?.Error}</span>
-        ) : (
-          movieData?.Search.map((movie) => {
-            return <MovieUnit key={movie.imdbID} movie={movie} />;
-          })
-        )}
+      <div className='items-top justify-center w-full px-4 flex pt-32 pb-32'>
+        <div className='grid gap-10 grid-cols-5'>
+          {movieData?.Error ? (
+            <span>{movieData?.Error}</span>
+          ) : (
+            movieData?.Search.map((movie) => {
+              return <MovieUnit key={movie.imdbID} movie={movie} />;
+            })
+          )}
+        </div>
       </div>
     </Layout>
   );

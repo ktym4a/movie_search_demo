@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         layout: '1fr',
+        movieUnitLayout: '1fr auto',
       },
       backgroundColor: {
         header: 'rgba(0,0,0,0.5)',
