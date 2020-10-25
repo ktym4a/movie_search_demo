@@ -20,7 +20,7 @@ const Background: React.FC = React.memo(({ children }) => {
       .catch((error) => {
         console.log(error);
       })
-      .then(function () {
+      .then(() => {
         setLoadedBG(false);
       });
   };
@@ -31,7 +31,7 @@ const Background: React.FC = React.memo(({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log('Background: render()');
+  console.log('\u001b[31mBackground: render()\u001b[0m');
   return (
     <Fragment>
       <div
