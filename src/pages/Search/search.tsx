@@ -12,6 +12,7 @@ const Search: React.FC = () => {
   const [movieData, setMovieData] = useState<AxiosMoviesSearchResponse>();
 
   const getSearchResult = async (searchQuery: string) => {
+    console.log('SearchPage: call => getSearchResult()');
     const searchParam = new URLSearchParams(searchQuery);
     const query = searchParam.get('query');
 
@@ -30,10 +31,12 @@ const Search: React.FC = () => {
   };
 
   useEffect(() => {
+    console.log('SearchPage: call => useEffect()');
     getSearchResult(location.search);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.search]);
 
+  console.log('SearchPage: render()');
   return (
     <Layout top={false}>
       <div className='items-top justify-center w-full px-4 flex pt-32 pb-32'>

@@ -10,6 +10,7 @@ const SearchForm: React.FC = () => {
   const history = useHistory();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log('SearchForm: call => handleSubmit()');
     e.preventDefault();
     history.push(`/search?query=${term}`);
   };

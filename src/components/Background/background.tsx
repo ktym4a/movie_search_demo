@@ -7,11 +7,12 @@ import { AxiosUnsplashResponse } from 'react-app-env';
 
 import './css/background.css';
 
-const Background: React.FC = ({ children }) => {
+const Background: React.FC = React.memo(({ children }) => {
   const [background, setBackground] = useState<string>(backgroound);
   const [loadedBG, setLoadedBG] = useState<boolean>(true);
 
   const getRandomImage = async () => {
+    console.log('Background: call => getRandomImage()');
     await Unsplash.get<AxiosUnsplashResponse>('/photos/random')
       .then((response) => {
         response.status === 200 && setBackground(response.data.urls.regular);
@@ -25,10 +26,12 @@ const Background: React.FC = ({ children }) => {
   };
 
   useEffect(() => {
+    console.log('Background: call => useEffect()');
     getRandomImage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log('Background: render()');
   return (
     <Fragment>
       <div
@@ -41,6 +44,6 @@ const Background: React.FC = ({ children }) => {
       </div>
     </Fragment>
   );
-};
+});
 
 export default Background;
