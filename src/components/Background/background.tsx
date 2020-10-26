@@ -2,12 +2,13 @@ import React, { useState, useEffect, Fragment, useContext } from 'react';
 
 import Unsplash from 'apis/unsplash';
 
+import { Store } from 'store';
+
 import { AxiosUnsplashResponse } from 'react-app-env';
 
 import './css/background.css';
-import { Store } from 'store';
 
-const Background: React.FC = React.memo(({ children }) => {
+const Background: React.FC = ({ children }) => {
   const { globalState, setGlobalState } = useContext(Store);
   const [loadedBG, setLoadedBG] = useState<boolean>(true);
 
@@ -45,6 +46,6 @@ const Background: React.FC = React.memo(({ children }) => {
       </div>
     </Fragment>
   );
-});
+};
 
 export default Background;
