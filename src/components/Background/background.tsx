@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment, useContext } from 'react';
+import React, { useEffect, Fragment, useContext, useMemo } from 'react';
 
 import Unsplash from 'apis/unsplash';
 
@@ -7,10 +7,10 @@ import { Store } from 'store';
 import { AxiosUnsplashResponse } from 'react-app-env';
 
 import './css/background.css';
+import backgroound from 'static/images/background.jpg';
 
 const Background: React.FC = ({ children }) => {
   const { globalState, setGlobalState } = useContext(Store);
-  const [loadedBG, setLoadedBG] = useState<boolean>(true);
 
   const getRandomImage = async () => {
     console.log('Background: call => getRandomImage()');
@@ -21,9 +21,7 @@ const Background: React.FC = ({ children }) => {
       })
       .catch((error) => {
         console.log(error);
-      })
-      .then(() => {
-        setLoadedBG(false);
+        setGlobalState({ background: backgroound });
       });
   };
 
@@ -33,19 +31,21 @@ const Background: React.FC = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log('Background: render()');
-  return (
-    <Fragment>
-      <div
-        className={`bg-cover bg-center blurBg overflow-hidden z-0 relative ${
-          loadedBG ? 'hidden' : 'block'
-        }`}
-        style={{ backgroundImage: `url(${globalState.background})` }}
-      >
-        {children}
-      </div>
-    </Fragment>
-  );
+  return useMemo(() => {
+    console.log('Background: render()');
+    // The rest of your rendering logic
+    return (
+      <Fragment>
+        <div
+          className='bg-cover bg-center blurBg overflow-hidden z-0 relative block'
+          style={{ backgroundImage: `url(${globalState.background})` }}
+        >
+          {children}
+        </div>
+      </Fragment>
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [globalState.background]);
 };
 
 export default Background;

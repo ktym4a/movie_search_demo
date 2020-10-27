@@ -1,7 +1,5 @@
 import React, { createContext, FC, useReducer } from 'react';
 
-import backgroound from 'static/images/background.jpg';
-
 type S = typeof initialState;
 
 type NewStateAction = Partial<S> | ((prevState: S) => Partial<S>);
@@ -12,7 +10,8 @@ type ContextValue = {
 };
 
 const initialState = {
-  background: backgroound,
+  background: '',
+  serach: '',
 };
 
 export const Store = createContext({} as ContextValue);
