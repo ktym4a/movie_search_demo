@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from 'components/Header';
-// import Background from 'components/Background';
 
 import { LayoutProps } from 'react-app-env';
 

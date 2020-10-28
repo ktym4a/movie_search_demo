@@ -10,10 +10,18 @@ const SearchForm: React.FC = () => {
   const { globalState, setGlobalState } = useContext(Store);
   const history = useHistory();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('SearchForm: call => handleSubmit()');
-    e.preventDefault();
-    history.push(`/search?query=${globalState.serach}`);
+  const handleSubmit = React.useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      console.log('SearchForm: call => handleSubmit()');
+      e.preventDefault();
+      history.push(`/search?query=${globalState.serach}`);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [globalState.serach]
+  );
+
+  const changeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setGlobalState({ serach: e.target.value });
   };
 
   return (
@@ -21,7 +29,7 @@ const SearchForm: React.FC = () => {
       <input
         type='text'
         placeholder='Search'
-        onChange={(e) => setGlobalState({ serach: e.target.value })}
+        onChange={changeSearchValue}
         value={globalState.serach}
         className='text-gray-600 py-2 px-1 block appearance-none border rounded-lg focus:outline-none text-left h-10 text-base leading-5 mr-4 w-form
         '

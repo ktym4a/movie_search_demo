@@ -1,4 +1,5 @@
 import React, { createContext, FC, useReducer } from 'react';
+import { GlobalStateProps } from 'react-app-env';
 
 type S = typeof initialState;
 
@@ -9,9 +10,10 @@ type ContextValue = {
   setGlobalState: (newState: NewStateAction) => void;
 };
 
-const initialState = {
+const initialState: GlobalStateProps = {
   background: '',
   serach: '',
+  movieData: undefined,
 };
 
 export const Store = createContext({} as ContextValue);

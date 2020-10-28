@@ -32,3 +32,9 @@ export interface MoviesSearchProps {
 export interface LayoutProps {
   top: boolean;
 }
+
+export interface GlobalStateProps {
+  background: string;
+  serach: string;
+  movieData?: AxiosMoviesSearchResponse;
+}
