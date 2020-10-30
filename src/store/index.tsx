@@ -14,6 +14,7 @@ const initialState: GlobalStateProps = {
   background: '',
   serach: '',
   movieData: undefined,
+  paged: 1,
 };
 
 export const Store = createContext({} as ContextValue);

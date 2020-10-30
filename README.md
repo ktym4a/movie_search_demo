@@ -2,7 +2,7 @@
 
 - [x] Get Background Image
   - [x] Set Background Image
-- [ ] Movies Seach
-- [ ] Get Movies List
+- [x] Movies Seach
+- [x] Get Movies List
   - [ ] Set Pagination
 - [ ] Get Movies Detail

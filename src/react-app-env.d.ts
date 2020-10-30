@@ -37,4 +37,5 @@ export interface GlobalStateProps {
   background: string;
   serach: string;
   movieData?: AxiosMoviesSearchResponse;
+  paged: number;
 }

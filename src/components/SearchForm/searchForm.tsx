@@ -13,6 +13,7 @@ const SearchForm: React.FC = () => {
   const handleSubmit = React.useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       console.log('SearchForm: call => handleSubmit()');
+      setGlobalState({ paged: 1 });
       e.preventDefault();
       history.push(`/search?query=${globalState.serach}`);
     },

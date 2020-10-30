@@ -7,6 +7,7 @@ import MovieUnit from 'components/MovieUnit';
 
 import { AxiosMoviesSearchResponse } from 'react-app-env';
 import { Store } from 'store';
+import Paginate from 'components/Paginate';
 
 const Search: React.FC = () => {
   const { globalState, setGlobalState } = useContext(Store);
@@ -21,6 +22,7 @@ const Search: React.FC = () => {
     await Omdb.get<AxiosMoviesSearchResponse>('', {
       params: {
         s: query,
+        page: globalState.paged,
       },
     })
       .then((response) => {
@@ -36,7 +38,7 @@ const Search: React.FC = () => {
     console.log('SearchPage: call => useEffect()');
     getSearchResult(location.search);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.search]);
+  }, [location.search, globalState.paged]);
 
   return useMemo(() => {
     console.log('SearchPage: render()');
@@ -53,6 +55,7 @@ const Search: React.FC = () => {
             )}
           </div>
         </div>
+        <Paginate />
       </Layout>
     );
   }, [globalState.movieData]);
