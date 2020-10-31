@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 
 import ReactPaginate from 'react-paginate';
 import { Store } from 'store';
@@ -22,26 +22,16 @@ const Paginate: React.FC = React.memo(() => {
     setGlobalState({ paged: selected });
   };
 
-  return useMemo(() => {
-    console.log('Paginate: render()');
-    return (
-      <ReactPaginate
-        pageCount={cntPageNums(globalState.movieData?.totalResults)}
-        pageRangeDisplayed={rangeDisplayed}
-        marginPagesDisplayed={0}
-        onPageChange={handlePageClick}
-        previousLabel={'previous'}
-        nextLabel={'next'}
-        breakLabel={'...'}
-        breakClassName={'break-me'}
-        containerClassName={'pagination'}
-        activeClassName={'active'}
-        initialPage={1}
-        disableInitialCallback={true}
-      />
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [globalState.movieData?.totalResults]);
+  console.log('Paginate: render()');
+  return (
+    <ReactPaginate
+      pageCount={cntPageNums(globalState.movieData?.totalResults)}
+      pageRangeDisplayed={rangeDisplayed}
+      marginPagesDisplayed={0}
+      onPageChange={handlePageClick}
+      forcePage={globalState.paged - 1}
+    />
+  );
 });
 
 export default Paginate;
