@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { Store } from 'store';
 
 const SearchForm: React.FC = () => {
-  const { setGlobalState } = useContext(Store);
+  const { globalState, setGlobalState } = useContext(Store);
   const [searchText, setSearchText] = useState<string>('');
   const history = useHistory();
 
@@ -22,6 +22,11 @@ const SearchForm: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [searchText]
   );
+
+  useEffect(() => {
+    globalState.serach && setSearchText(globalState.serach);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const changeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
