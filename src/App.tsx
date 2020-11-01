@@ -7,6 +7,8 @@ import { Provider } from 'store';
 
 import Top from 'pages/Top';
 import Search from 'pages/Search';
+import SearchDetail from 'pages/SearchDetail';
+
 import Background from 'components/Background';
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/' component={Top}></Route>
-            <Route exact path='/search' component={Search}></Route>
+            <Route exact path='/search' component={Search}></Route>　
+            <Route path='/search/:imdbID' component={SearchDetail}></Route>
           </Switch>
         </Router>
       </Background>

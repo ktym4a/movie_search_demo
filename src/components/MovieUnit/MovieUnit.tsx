@@ -1,10 +1,17 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { MovieUnitProps } from 'react-app-env';
 
 const MovieUnit: React.FC<MovieUnitProps> = ({ movie }) => {
   return (
-    <div className='grid grid-rows-movieUnitLayout'>
+    <Link
+      to={{
+        pathname: `/search/${movie.imdbID}`,
+      }}
+      className='grid grid-rows-movieUnitLayout'
+    >
       <div>
         <img src={movie.Poster} alt={movie.Title} />
       </div>
@@ -14,7 +21,7 @@ const MovieUnit: React.FC<MovieUnitProps> = ({ movie }) => {
         </div>
         <h3>{movie.Title}</h3>
       </div>
-    </div>
+    </Link>
   );
 };
 
