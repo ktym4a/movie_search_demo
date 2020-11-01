@@ -38,4 +38,5 @@ export interface GlobalStateProps {
   serach: string;
   movieData?: AxiosMoviesSearchResponse;
   paged: number;
+  loading: boolean;
 }

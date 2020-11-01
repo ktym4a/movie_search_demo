@@ -14,8 +14,7 @@ const SearchForm: React.FC = () => {
   const handleSubmit = React.useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       console.log('SearchForm: call => handleSubmit()');
-      setGlobalState({ paged: 1 });
-      setGlobalState({ serach: searchText });
+      setGlobalState({ paged: 1, serach: searchText });
       e.preventDefault();
       history.push(`/search?query=${searchText}`);
     },
