@@ -5,7 +5,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2ffb2fd9-48dd-4cd9-86b0-7374aef45051/deploy-status)](https://app.netlify.com/sites/goofy-villani-46184e/deploys)
 
 ## Screenshot / GIF of the application (Demo)
-![result](https://github.com/ktym4a/movie_search_demo//blob/media/gif/movie_search.gif)
+![result](https://github.com/ktym4a/movie_search_demo/blob/media/gif/movie_search.gif)
 
 ## Application Description
 
