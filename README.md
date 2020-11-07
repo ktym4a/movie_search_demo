@@ -24,7 +24,7 @@ View the application at [here](https://movie-search.ktym4a.com/)
 
 ## Technology Stack
 
-| Technology                   | Description                                                                                                                                        | Link ↘️                                                                |
+| Technology                   | Description                                                                                                                                        | Link                                                               |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | React                        | React is a JavaScript library for building user interfaces.                                                                                        | [↘️](https://github.com/facebook/react)                                |
 | axios                        | Promise based HTTP client for the browser and node.js                                                                                              | [↘️](https://github.com/axios/axios)                                   |
