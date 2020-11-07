@@ -32,6 +32,5 @@ View the application at [here](https://movie-search.ktym4a.com/)
 | react-loading                | loading animations for React projects.                                                                                                             | [↘️](https://github.com/fakiolinho/react-loading)                      |
 | react-paginate               | A ReactJS component to render a pagination.                                                                                                        | [↘️](https://github.com/AdeleD/react-paginate)                         |
 | react-rating                 | react rating componen                                                                                                                              | [↘️](https://github.com/dreyescat/react-rating)                        |
-| OMDb API                     | The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users. |
-| [↘️](http://www.omdbapi.com/) |
+| OMDb API                     | The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users. | [↘️](http://www.omdbapi.com/) |
 | Unsplash API                 | Unsplash is a great resource for high resolution photographs.                                                                                      | [↘️](https://source.unsplash.com/)                                     |
