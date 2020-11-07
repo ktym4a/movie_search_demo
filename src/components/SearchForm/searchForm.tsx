@@ -32,19 +32,24 @@ const SearchForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='flex items-center content-center'>
-      <input
-        type='text'
-        placeholder='Search'
-        onChange={changeSearchValue}
-        value={searchText}
-        className='text-gray-600 py-2 px-1 block appearance-none border rounded-lg focus:outline-none text-left h-10 text-base leading-5 mr-4 w-form
+    <React.Fragment>
+      <form
+        onSubmit={handleSubmit}
+        className='flex items-center content-center'
+      >
+        <input
+          type='text'
+          placeholder='Search'
+          onChange={changeSearchValue}
+          value={searchText}
+          className='text-gray-600 py-2 px-1 block appearance-none border rounded-lg focus:outline-none text-left h-10 text-base leading-5 mr-4 w-form
         '
-      />
-      <button type='submit'>
-        <FontAwesomeIcon icon={faSearch} className='h-10' />
-      </button>
-    </form>
+        />
+        <button type='submit'>
+          <FontAwesomeIcon icon={faSearch} className='h-10' />
+        </button>
+      </form>
+    </React.Fragment>
   );
 };
 

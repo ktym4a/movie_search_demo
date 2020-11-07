@@ -61,19 +61,30 @@ const SearchMain: React.FC = () => {
         <div>
           {movieData && (
             <div>
-              <div>
-                <img src={movieData.Poster} alt={movieData.Title} />
+              <div className='bg-header px-4 text-white mb-3'>
+                <h1 className='font-bold text-4xl'>
+                  {movieData.Title}
+                  <span className='text-xl'>（{movieData.Released}）</span>
+                </h1>
+                <div>
+                  {movieData.Runtime} | {movieData.Genre}
+                </div>
               </div>
-              <Rating initialRating={rated} readonly />
+              <div className='text-center mb-3'>
+                <img
+                  src={movieData.Poster}
+                  alt={movieData.Title}
+                  className='m-auto'
+                />
+              </div>
+              <div className='text-center mb-3'>
+                <Rating initialRating={rated} readonly />
+              </div>
+              <div className='bg-header p-4 text-white mb-3'>
+                {movieData.Plot}
+              </div>
               <div>
-                <div>Released: {movieData.Released}</div>
-                <h1>{movieData.Title}</h1>
-                <div>Runtime: {movieData.Runtime}</div>
-                <div>Genre: {movieData.Genre}</div>
-                <div>Director: {movieData.Director}</div>
-                <div>Writer: {movieData.Writer}</div>
                 <div>Actors: {movieData.Actors}</div>
-                <div>Plot: {movieData.Plot}</div>
                 <div>Language: {movieData.Language}</div>
                 <div>Country: {movieData.Country}</div>
                 <div>Awards: {movieData.Awards}</div>
