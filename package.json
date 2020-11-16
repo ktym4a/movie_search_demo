@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -29,14 +30,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "build:tailwind": "tailwind build src/styles/tailwind.css -o src/styles/tailwind.output.css",
-    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",
-    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
-    "start:react": "react-scripts start",
-    "prebuild": "run-s build:tailwind",
-    "build": "react-scripts build",
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run watch:css && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/tailwind.output.css"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,6 +53,7 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "postcss-cli": "^8.2.0",
     "postcss-preset-env": "^6.7.0"
   }
 }
